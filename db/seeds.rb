@@ -1,8 +1,8 @@
-games = [{ teams: [{ name: 'Bulls', player_names: 'Danny, Benn', score: 812 },
+games = [{ competing_teams: [{ team: [name: 'Bulls', player: {first_name: 'Danny', last_name: 'Devito'}], score: 812 },
                    { name: 'Spurs', player_names: 'Logan, Ben', score: 56 }] },
-         { teams: [{ name: 'Celtics', player_names: 'Brian, Paul', score: 34 },
+         { competing_teams: [{ name: 'Celtics', player_names: 'Brian, Paul', score: 34 },
                    { name: 'Spurs', player_names: 'Rachel, Helen', score: 10000 }] },
-         { teams: [{ name: 'Lakers', player_names: 'Nick, Liz', score: 92 },
+         { competing_teams: [{ name: 'Lakers', player_names: 'Nick, Liz', score: 92 },
                    { name: 'Knicks', player_names: 'Bryant, Dave', score: 786 }] }]
 
 puts 'Seeding 3 games...'
