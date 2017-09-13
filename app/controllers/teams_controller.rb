@@ -22,7 +22,6 @@ class TeamsController < ApplicationController
     @games = []
     games_data.each do |game|
       opp_team_choices = CompetingTeam.where(game_id: game.game_id)
-      # binding.pry
       opp_team = opp_team_choices.select { |team| team.team_id != team_data.id }
       @games << {
         id: game.id,
