@@ -7,7 +7,7 @@ class TeamsController < ApplicationController
   def show
     team_data = Team.find(params[:id])
     player_data = Player.where(team: team_data)
-    game_data = CompetingTeam.where(team: team_data)
+    games_data = CompetingTeam.where(team: team_data)
 
     @players = []
     player_data.each do |player|
@@ -20,8 +20,9 @@ class TeamsController < ApplicationController
     end
 
     @games = []
-    game_data.each do |game|
-      opp_team_choices = CompetingTeam.where(game: game)
+    games_data.each do |game|
+      opp_team_choices = CompetingTeam.where(game_id: game.game_id)
+      # binding.pry
       opp_team = opp_team_choices.select { |team| team.team_id != team_data.id }
       @games << {
         id: game.id,
